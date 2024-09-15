@@ -59,3 +59,7 @@ def script():
             player_state = False
 
     print(player_state)
+
+#add this to run 100 times, delete to run 1 time
+for i in range(100):
+    script()
