@@ -1,27 +1,32 @@
+#import random
 import random
-
+#defining the "script()"
 def script():
+    #a list containing which door the host can open
     host_door_list = [1, 2, 3]
+    #a list containing which door the player can open
     player_door_list = [1,2,3]
     print(f"Host List: {host_door_list}")
     print(f"Player List: {player_door_list}")
-
+    #a variable used to determined which door will have the prize
     prized_door = random.choice(host_door_list)
+    #remove a number in the "host_door_list" list which coresspond to the number picked by "prized_door"
     host_door_list.remove(prized_door)
     print(F"Prized Door: {prized_door}")
     print(f"Host List: {host_door_list}")
     print(f"Player List: {player_door_list}")
-
+    #a variable used to pick a number 1-3 for the player
     player_first_door = random.randint(1,3)
+    #remove a number in the "player_first_door" list which coresspond to the number pick by "player_first_door"
     player_door_list.remove(player_first_door)
     print(f"Player 1st door: {player_first_door}")
-
+    #remove a number in "host_door_list" which coresspond to the number pick by "player_first_door" list if "player_first_door" number is in the list
     if player_first_door in host_door_list:
         host_door_list.remove(player_first_door)
 
     print(f"Host List: {host_door_list}")
     print(f"Player List: {player_door_list}")
-
+    
     host_open_door = random.choice(host_door_list)
     player_door_list.remove(host_open_door)
     host_door_list.remove(host_open_door)
